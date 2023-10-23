@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1{
+            margin-top: -525px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .calculator {
+            background-color: #000000;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            margin-left: -380px;
+        }
+
+        .calculator input[type="text"] {
+            width: 300px;
+            height: 60px;
+            font-size: 25px;
+            border: none;
+            background-color: #fff;
+            color: black;
+            text-align: right;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .button {
+            font-size: 30px;
+            padding: 10px;
+            border: none;
+            background-color: #857f7fef;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 25px;
+
+        }
+        .button1{
+            font-size: 30px;
+            padding: 10px;
+            border: none;
+            background-color: rgba(241, 136, 98, 0.897);
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 25px;
+        }
+
+        
+        .button1:hover {
+            background-color: rgba(247, 129, 86, 0.897) ;
+        }
+    </style>
+</head>
+<body>
+         <h1>Level 1: Task 3: Calculator</h1>
+
+
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button class="button" onclick="addToDisplay('7')">7</button>
+            <button class="button" onclick="addToDisplay('8')">8</button>
+            <button class="button" onclick="addToDisplay('9')">9</button>
+            <button class="button1" onclick="addToDisplay('+')">+</button>
+            <button class="button" onclick="addToDisplay('4')">4</button>
+            <button class="button" onclick="addToDisplay('5')">5</button>
+            <button class="button" onclick="addToDisplay('6')">6</button>
+            <button class="button1" onclick="addToDisplay('-')">-</button>
+            <button class="button" onclick="addToDisplay('1')">1</button>
+            <button class="button" onclick="addToDisplay('2')">2</button>
+            <button class="button" onclick="addToDisplay('3')">3</button>
+            <button class="button1" onclick="addToDisplay('*')">*</button>
+            <button class="button" onclick="addToDisplay('0')">0</button>
+            <button class="button" onclick="addToDisplay('.')">.</button>
+            <button class="button" onclick="clearDisplay()">C</button>
+            <button class="button" onclick="calculate()">=</button>
+            <button class="button1" onclick="addToDisplay('/')">/</button>
+        </div>
+    </div>
+
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
